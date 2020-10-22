@@ -1,0 +1,14 @@
+
+.content {
+  background: $color-bg-main;
+  display: block;
+
+  @include screen('tablet') {
+    display: flex;
+  }
+
+  @include screen('desktop') {
+    display: flex;
+    min-height: calc(100vh - (2 * 58px));
+  }
+}

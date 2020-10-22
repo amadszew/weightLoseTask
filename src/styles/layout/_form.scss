@@ -1,0 +1,146 @@
+%width-properties {
+  width: 70%;
+  max-width: 220px;
+}
+
+.form {
+  background: $color-bg-alt;
+  padding: 10% 5% 15%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__header {
+    @include remToPx(font-size, 48px);
+    @include remToPx(line-height, 48px);
+    color: $color-font-main;
+    font-weight: $light;
+    font-family: $font-form;
+    text-transform: uppercase;
+    word-spacing: 9999px;
+    text-align: center;
+    margin-bottom: $space-bottom * 1.5;
+  }
+
+  &__calc {
+    margin-bottom: $space-bottom * 2;
+    @extend %width-properties;
+  }
+  &__message {
+    font-family: $font-form;
+    font-weight: $bold;
+    @include remToPx(font-size, 14px);
+    margin-bottom: $space-bottom / 2;
+    text-align: center;
+    height: 20px;
+
+    &--success {
+      color: $color-success;
+    }
+    &--error {
+      color: $color-error;
+    }
+  }
+
+  &__btn {
+    @include remToPx(font-size, 14px);
+    letter-spacing: 1px;
+    color: $color-font-alt;
+    font-weight: $extra-bold;
+    font-family: $font-form;
+    text-align: center;
+    text-transform: uppercase;
+    border: 1px solid #fff;
+    padding: 15px 20px;
+    width: 100%;
+    display: block;    
+    cursor: pointer;
+    transition: all .2s ease-in-out;
+
+    &:hover, &:focus {
+      border-color: #000;
+      outline: none;
+      letter-spacing: 2px;
+    }
+  }
+
+  &__bmi {
+    @extend %width-properties;
+    height: 130px;
+    border: 1px solid #fff;
+    display: flex;
+    justify-content: center;
+
+    &.negative {
+      border-color: $color-error;
+    }
+    &.positive {
+      border-color: $color-success;
+    }
+
+    &__model {
+      width: 50%;
+      position: relative;
+
+      img {
+        position: absolute;
+        height: 200px;
+        top: -35px;
+        left: 18px;
+      }
+    }
+
+    &__text {
+      width: 40%;
+      @include remToPx(font-size, 12px);
+      letter-spacing: 1px;
+      color: $color-font-main;
+      font-weight: $bold;
+      font-family: $font-form;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      &__info {
+        text-transform: uppercase;
+      }
+
+      &__score {
+        @include remToPx(font-size, 30px);
+        @include remToPx(line-height, 30px);
+        font-weight: $normal;
+        margin-bottom: 10px;
+        height: 30px;
+      }
+
+      &__desc {
+        text-align: center;
+      }
+    }
+  }
+
+  @include screen('tablet') {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+
+  @include screen('desktop') {
+    max-width: 300px;
+    padding: 2% 1.5% 3%;
+
+    &__header {
+      text-align: left;
+      width: 250px;
+    }
+
+    &__calc {
+      width: 250px;
+    }
+    &__bmi {
+      width: 250px;
+    } 
+  }
+}

@@ -1,0 +1,137 @@
+%font-properties {
+  font-weight: $bold;
+  font-family: $font-form;
+}
+
+.form-group {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: $color-font-main;
+  text-transform: uppercase;
+  @include remToPx(font-size, 14px);
+  letter-spacing: 1px;
+  margin: 0 auto 15px;
+  @extend %font-properties;
+
+  &:nth-child(3) {
+    margin-bottom: $space-bottom / 1.5;
+  }
+
+  &:last-of-type {
+    margin-bottom: $space-bottom / 2;
+  }
+
+  &__label {
+    width: 90px;
+    margin-right: 5px;
+  }
+
+  &__input {
+    background: transparent;
+    border: 1px solid $color-font-main;
+    width: 80px;
+    height: 40px;
+    padding: 5px;
+    color: $color-font-main;
+    text-align: center;
+    margin-right: 10px;
+    -moz-appearance: textfield;
+    @extend %font-properties;
+
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+
+    &:hover, &:focus {
+      outline: none;
+      box-shadow: 0 0px 6px 1px darken($color-font-main, 10%);
+    }
+
+    &.error { 
+      border-color: $color-error;
+      &:hover, &:focus {
+        box-shadow: 0 0px 6px 1px darken($color-error, 10%);
+      }
+    }
+    &.success {
+      border-color: $color-success;
+      &:hover, &:focus {
+        box-shadow: 0 0px 6px 1px darken($color-success, 10%);
+      }
+    }
+  }
+
+  &__unit {
+    width: 30px;
+  }
+
+  &--radio {
+    width: 55%;
+    display: flex;
+    justify-content: flex-start;
+    &__wrapper {
+      width: 40%;
+    } 
+  
+    &__label {
+      width: 80px;
+      margin-right: 5px;
+    }
+  
+    &__input {
+      &:checked, &:not(:checked) {
+        position: absolute;
+        visibility: hidden;
+        &:hover, &:focus {
+          outline: none;
+        }
+  
+        & + label {
+          position: relative;
+          padding-left: 28px;
+          cursor: pointer;
+          line-height: 20px;
+          display: inline-block;
+  
+          &:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 16px;
+            height: 16px;
+            border-radius: 100%;
+            background: #f7f7f3;
+          }
+  
+          &:after {
+            content: '';
+            width: 6px;
+            height: 6px;
+            background: #444;
+            position: absolute;
+            top: 5px;
+            left: 5px;
+            border-radius: 100%;
+            -webkit-transition: all 0.2s ease;
+            transition: all 0.2s ease;
+          }
+          
+        }
+      }
+      &:not(:checked) + label:after {
+        opacity: 0;
+        transform: scale(0);
+      }
+  
+      &:checked + label:after {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+  }
+}
+

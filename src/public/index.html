@@ -3,11 +3,119 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Weight Lose Task</title>
+  <link rel="icon" href="data:;base64,=">
 </head>
 <body>
-  <div>
-    <h1>Hello World</h1>
+  <div class="container">
+    <div class="letterbox"></div>
+    <main class="content">
+      <section class="info">
+        <div class="info__wrapper">
+          <header class="info__header">
+            <h1>Ty też możesz schudnąć tym roku!</span></h1>
+            
+          </header>
+          <div class="info__sticker">
+            <svg class="info__sticker__circle--outer" viewBox="0 0 300 300"  >
+              <defs>
+                <path id="criclePath" d=" M 150, 150 m -120, 0 a 120,120 0 0,1 240,0 a 120,120 0 0,1 -240,0 "/>
+                <path id="criclePath2" d=" M 150, 150 m -120, 0 a 120,120 0 0,1 240,0 a 120,120 0 0,1 -240,0" transform="rotate(-180 150 150)"/>
+              </defs>
+              <text class="info__sticker__text">
+                <textPath xlink:href="#criclePath">
+                  Promocja limitowana!
+                </textPath>
+              </text>
+              <text class="info__sticker__text">
+                <textPath xlink:href="#criclePath2">
+                  Promocja limitowana!
+                </textPath>
+              </text>
+            </svg>
+            <div class="info__sticker__circle--inner">
+              <p>Zostało tylko <span>2399</span> diet!</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="info__button">
+          <div class="info__button__stars"></div>
+          <a href="/" class="info__button__link">Sprawdź najprostszą dietę online!</a>
+        </div>
+      </section>
+      <section class="form">
+        <header class="form__header">
+          <h2>Ile chcesz ważyć?</h2>
+        </header>
+        <form class="form__calc" autocomplete="off">
+          <div class="form__message"></div>
+          <div class="form-group">
+            <label for='wannaWeight' class="form-group__label">Chcę ważyć</label>
+            <input 
+              id="wishWeight" 
+              type="number" 
+              class="form-group__input" 
+              value=''>
+            <span class="form-group__unit">kg</span>
+          </div>
+          <div class="form-group">
+            <label for="weight" class="form-group__label">Ważę</label>
+            <input 
+              id="weight" 
+              type="number" 
+              class="form-group__input" 
+              value=''>
+            <span class="form-group__unit">kg</span>
+          </div>
+          <div class="form-group">
+            <label for="height" class="form-group__label">Wzrost</label>
+            <input 
+              id="height" 
+              type="number" 
+              class="form-group__input"
+              value=''>
+            <span class="form-group__unit">cm</span>
+          </div>
+          <div class="form-group">
+            <label class="form-group__label">Płeć</label>
+            <div class="form-group--radio">
+              <div class="form-group--radio__wrapper">
+                <input
+                  checked
+                  id="female" 
+                  type="radio" 
+                  class="form-group--radio__input" 
+                  name="gender" 
+                  value="0" />
+                <label for="female" class="form-group--radio__label">K</label>
+              </div>
+              <div class="form-group--radio__wrapper">
+                <input 
+                  id="male" 
+                  type="radio" 
+                  class="form-group--radio__input" 
+                  name="gender" 
+                  value="1" />
+                <label for="male" class="form-group--radio__label">M</label>
+              </div>
+            </div>
+          </div>
+          <button id="formSubmit" class="form__btn">Zapisz</button>
+        </form>
+        <div class="form__bmi">
+          <div class="form__bmi__model">
+            <img id="humanModel" src=<%=require("../assets/model_female.svg").default%> />
+          </div>
+          <p class="form__bmi__text">
+            <span class="form__bmi__text__info">bmi</span>
+            <span class="form__bmi__text__score" id="bmiScore">0</span>
+            <span class="form__bmi__text__desc" id="bmiDesc"></span>
+          </p>
+        </div>
+      </section>
+    </main>
+    <div class="letterbox"></div>
   </div>
 </body>
 </html>
