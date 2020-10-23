@@ -20,7 +20,7 @@ and follow the instructions.
 1\. Run the development server:
 
 ```bash
-npm run
+npm start
 ```
 
 2\. Open [localhost:8000](http://localhost:8000) to see the live app.
