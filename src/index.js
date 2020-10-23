@@ -5,17 +5,20 @@ const radioButtons = document.querySelectorAll('.form-group--radio__input');
 const radioWrappers = document.querySelectorAll('.radio-field__wrapper');
 const model = document.querySelector('#humanModel');
 
-let modelsArr = [
-  '/56cd9cb982c6666c76145b442a737d22.svg', //female model
-  '/1fd7e202dc1d17d55aee16d2f714b9e6.svg'  //male model
-]
-
 function modelToggleHandler(e) {
   e.stopPropagation();
 
-  this.id === 'female'
-    ? model.src = modelsArr[0]
-    : model.src = modelsArr[1]
+  const female = "form__bmi__model__img--female";
+  const male = "form__bmi__model__img--male";
+
+  if (this.id === 'female') {
+    model.classList.add(female);
+    model.classList.remove(male);
+  } else {
+    model.classList.remove(female);
+    model.classList.add(male);
+  }
+
 }
 
 function check() { 
@@ -48,8 +51,6 @@ function BMIcalc() {
   const condition1 = w > 30 && w < 200 && w !== '';
   const condition2 = h > 120 && h < 220 && h !== '';
 
-  console.log(condition1, 'c1')
-  console.log(condition2, 'c2')
   if (condition1 && condition2) {
     const score = Math.round((w / Math.pow((h/100), 2)) * 10) / 10;
     BMIScore.innerHTML = score;
@@ -167,7 +168,7 @@ function validateAndSendForm(e) {
   const BMIResult = BMIContainer.classList.contains('positive');
 
   if (validationResult && BMIResult) {
-    message.innerHTML = "Formularz wysłany!";
+    message.innerHTML = "Formularz wysłano!";
     message.classList.remove('form__message--error');
     message.classList.add('form__message--success');
 

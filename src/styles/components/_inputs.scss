@@ -116,8 +116,7 @@
             top: 5px;
             left: 5px;
             border-radius: 100%;
-            -webkit-transition: all 0.2s ease;
-            transition: all 0.2s ease;
+            @include prefix('transition', 'all .2s ease', moz webkit);
           }
           
         }

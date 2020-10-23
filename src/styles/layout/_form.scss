@@ -29,16 +29,18 @@
   &__message {
     font-family: $font-form;
     font-weight: $bold;
-    @include remToPx(font-size, 14px);
+    @include remToPx(font-size, 16px);
     margin-bottom: $space-bottom / 2;
     text-align: center;
-    height: 20px;
+    height: 40px;
+    color: #fff;
+    padding: 12px 6px;
 
     &--success {
-      color: $color-success;
+      background: $color-success;
     }
     &--error {
-      color: $color-error;
+      background: $color-error;
     }
   }
 
@@ -55,7 +57,8 @@
     width: 100%;
     display: block;    
     cursor: pointer;
-    transition: all .2s ease-in-out;
+    @include prefix('appearance', 'none', moz webkit);
+    @include prefix('transition', 'all .2s ease-in-out', moz webkit);
 
     &:hover, &:focus {
       border-color: #000;
@@ -82,11 +85,21 @@
       width: 50%;
       position: relative;
 
-      img {
+      &__img {
         position: absolute;
         height: 200px;
         top: -35px;
         left: 18px;
+        width: 100px;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: contain;
+        &--female {
+          background-image: url('../assets/model_female.svg');
+        }
+        &--male {
+          background-image: url('../assets/model_male.svg');
+        }
       }
     }
 
