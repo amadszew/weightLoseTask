@@ -2,9 +2,9 @@
   padding: 10% 5%;
 
   &__header {
-    @include remToPx(font-size, 36px);
+    @include pxToRem(font-size, 36px);
     letter-spacing: -2px;
-    @include remToPx(line-height, 36px);
+    @include pxToRem(line-height, 36px);
     font-weight: $extra-light;
     font-family: $font-base;
     color: #2a45ee;
@@ -38,7 +38,7 @@
       padding: 20px;
       color: $color-font-main;
       text-decoration: none;
-      @include remToPx(font-size, 18px);
+      @include pxToRem(font-size, 18px);
       font-weight: $light;
       font-family: $font-base;
       text-align: center;
@@ -71,8 +71,8 @@
 
     &__header {
       text-align: right;
-      @include remToPx(font-size, 50px);
-      @include remToPx(line-height, 50px);
+      @include pxToRem(font-size, 50px);
+      @include pxToRem(line-height, 50px);
       width: 525px;
     }
     &__button {

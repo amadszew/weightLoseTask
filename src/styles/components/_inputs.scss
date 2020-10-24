@@ -9,7 +9,7 @@
   justify-content: space-between;
   color: $color-font-main;
   text-transform: uppercase;
-  @include remToPx(font-size, 14px);
+  @include pxToRem(font-size, 14px);
   letter-spacing: 1px;
   margin: 0 auto 15px;
   @extend %font-properties;

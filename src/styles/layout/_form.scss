@@ -11,8 +11,8 @@
   align-items: center;
 
   &__header {
-    @include remToPx(font-size, 48px);
-    @include remToPx(line-height, 48px);
+    @include pxToRem(font-size, 48px);
+    @include pxToRem(line-height, 48px);
     color: $color-font-main;
     font-weight: $light;
     font-family: $font-form;
@@ -29,7 +29,7 @@
   &__message {
     font-family: $font-form;
     font-weight: $bold;
-    @include remToPx(font-size, 16px);
+    @include pxToRem(font-size, 16px);
     margin-bottom: $space-bottom / 2;
     text-align: center;
     height: 40px;
@@ -45,7 +45,7 @@
   }
 
   &__btn {
-    @include remToPx(font-size, 14px);
+    @include pxToRem(font-size, 14px);
     letter-spacing: 1px;
     color: $color-font-alt;
     font-weight: $extra-bold;
@@ -105,7 +105,7 @@
 
     &__text {
       width: 40%;
-      @include remToPx(font-size, 12px);
+      @include pxToRem(font-size, 12px);
       letter-spacing: 1px;
       color: $color-font-main;
       font-weight: $bold;
@@ -120,8 +120,8 @@
       }
 
       &__score {
-        @include remToPx(font-size, 30px);
-        @include remToPx(line-height, 30px);
+        @include pxToRem(font-size, 30px);
+        @include pxToRem(line-height, 30px);
         font-weight: $normal;
         margin-bottom: 10px;
         height: 30px;

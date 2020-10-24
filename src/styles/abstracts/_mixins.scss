@@ -1,4 +1,4 @@
-@mixin remToPx($prop, $size) {
+@mixin pxToRem($prop, $size) {
   #{$prop}: $size;
   #{$prop}: calculateRem($size);
 }

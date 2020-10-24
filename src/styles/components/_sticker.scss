@@ -43,11 +43,11 @@
       
       p {
         @extend %font-properties;
-        @include remToPx(line-height, 16px);
+        @include pxToRem(line-height, 16px);
         font-weight: $extra-bold;
       
         span {
-          @include remToPx(font-size, 30px);
+          @include pxToRem(font-size, 30px);
           display: inline-block;
           margin: 10px 0;
         }
@@ -58,7 +58,7 @@
 
   &__text {
     @extend %font-properties;
-    @include remToPx(font-size, 22px);
+    @include pxToRem(font-size, 22px);
     letter-spacing: 3px;
     font-weight: bold;
     fill: #fff;
